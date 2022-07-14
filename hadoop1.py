@@ -17,7 +17,7 @@ class RatingsCount(MRJob):
         # returns movie_id as a key with the number of ratings as a value
         yield movie_id, 1
 
-    def combiner_count_movie_ratigs(self, movie_id, ratings):
+    def combiner_count_movie_ratings(self, movie_id, ratings):
         # returns movie_id with the sum of ratings
         yield None, (sum(ratings), movie_id)
 
