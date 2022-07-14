@@ -1,13 +1,13 @@
-from mrjob.job import MRJOB
-from mrjob.step import MRSTEP
+from mrjob.job import MRJob
+from mrjob.step import MRStep
 
 
-class RatingsCount(MRJOB):
+class RatingsCount(MRJob):
 
     def steps(self):
         # steps that MRJOB will run
         return [
-            MRSTEP(mapper=self.mapper_get_movies,
+            MRStep(mapper=self.mapper_get_movies,
                    combiner=self.combiner_count_movie_ratings)
         ]
 
