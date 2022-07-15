@@ -15,11 +15,11 @@ class RatingsCount(MRJob):
         # seperate each row on tab
         (user_id, movie_id, rating, timestamp) = line.split('\t')
         # returns movie_id as a key with the number of ratings as a value
-        yield movie_id, 1
+        yield movie_id
 
     def combiner_count_movie_ratings(self, movie_id, ratings):
         # returns movie_id with the sum of ratings
-        yield None, (sum(ratings), movie_id)
+        yield (sum(ratings), movie_id)
 
 
 if __name__ == '__main__':
