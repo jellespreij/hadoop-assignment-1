@@ -19,7 +19,7 @@ class RatingsCount(MRJob):
 
     def combiner_count_movie_ratings(self, movie_id, ratings):
         # returns movie_id with the sum of ratings
-        yield (sum(ratings), movie_id)
+        yield none, (sum(ratings), movie_id)
 
 
 if __name__ == '__main__':
